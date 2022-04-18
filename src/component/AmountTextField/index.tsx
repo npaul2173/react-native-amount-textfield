@@ -22,9 +22,15 @@ export const getFormattedFloatNumber = (value: number, precision: number) => {
   const valueString = value.toString()
   const valueSplit = valueString.split('.')
   const decimalPortion = valueSplit[1]
+  const backNumber =
+    decimalPortion === undefined
+      ? `.${'0'.repeat(precision)}`
+      : decimalPortion.length < precision
+      ? `.${decimalPortion}${'0'.repeat(precision - decimalPortion.length)}`
+      : decimalPortion
   const frontNumberString = valueSplit[0]
   const frontNumber = numberWithCommas(frontNumberString)
-  return `${frontNumber}.${decimalPortion.substring(0, precision)}`
+  return `${frontNumber}${backNumber}`
 }
 export const AmountTextField: React.FC<AmountTextFieldProps> = ({
   precision = 2,

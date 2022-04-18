@@ -9,7 +9,7 @@ const App = () => {
   const [amount, setAmount] = useState<string | null>(null)
 
   console.log('====================================')
-  console.log(getFormattedFloatNumber(2323434.454, 2))
+  console.log(getFormattedFloatNumber(2323434.2, 2))
   console.log('====================================')
   return (
     <View style={styles.container}>
