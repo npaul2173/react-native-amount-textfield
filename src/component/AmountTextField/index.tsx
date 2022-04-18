@@ -18,6 +18,14 @@ const numberWithCommas = (x: string) => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
 
+export const getFormattedFloatNumber = (value: number, precision: number) => {
+  const valueString = value.toString()
+  const valueSplit = valueString.split('.')
+  const decimalPortion = valueSplit[1]
+  const frontNumberString = valueSplit[0]
+  const frontNumber = numberWithCommas(frontNumberString)
+  return `${frontNumber}.${decimalPortion.substring(0, precision)}`
+}
 export const AmountTextField: React.FC<AmountTextFieldProps> = ({
   precision = 2,
   value,

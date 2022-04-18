@@ -1,1 +1,4 @@
-export { AmountTextField } from './component/AmountTextField'
+export {
+  AmountTextField,
+  getFormattedFloatNumber,
+} from './component/AmountTextField'
