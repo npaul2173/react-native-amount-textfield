@@ -1,8 +1,8 @@
 {
   "name": "react-native-amount-textfield",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "",
-  "homepage": "https://github.com/demchenkoalex/react-native-amount-textfield#readme",
+  "homepage": "https://github.com/npaul2173/react-native-amount-textfield#readme",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "Nabendu Paul <npauldev001@gmail.com>",
@@ -53,6 +53,22 @@
     "react": "*",
     "react-native": "*"
   },
+  "keywords": [
+    "currency format",
+    "Amount formatter",
+    "Number Format",
+    "Currency",
+    "Amount Textfield",
+    "react-native",
+    "Currency Input",
+    "Formatter",
+    "Amount Formatter Textfield",
+    "Format Textfield",
+    "Textfield",
+    "Thousand",
+    "Thousand Seperator",
+    "Decimal Formatter"
+  ],
   "jest": {
     "preset": "react-native",
     "moduleFileExtensions": [
