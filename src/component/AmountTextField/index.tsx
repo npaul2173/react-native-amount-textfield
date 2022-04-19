@@ -6,7 +6,10 @@ export interface AmountTypes {
   floatValue: number
   error: boolean
 }
-export type AmountTextFieldProps = Pick<TextInputProps, 'style'> & {
+export type AmountTextFieldProps = Pick<
+  TextInputProps,
+  'style' | 'placeholderTextColor' | 'editable'
+> & {
   precision?: number
   value: string | null
   onChangeValue?: (value: AmountTypes) => void
@@ -24,13 +27,13 @@ export const getFormattedFloatNumber = (value: number, precision: number) => {
   const decimalPortion = valueSplit[1]
   const backNumber =
     decimalPortion === undefined
-      ? `.${'0'.repeat(precision)}`
+      ? `${'0'.repeat(precision)}`
       : decimalPortion.length < precision
-      ? `.${decimalPortion}${'0'.repeat(precision - decimalPortion.length)}`
+      ? `${decimalPortion}${'0'.repeat(precision - decimalPortion.length)}`
       : decimalPortion
   const frontNumberString = valueSplit[0]
   const frontNumber = numberWithCommas(frontNumberString)
-  return `${frontNumber}${backNumber}`
+  return `${frontNumber}.${backNumber}`
 }
 export const AmountTextField: React.FC<AmountTextFieldProps> = ({
   precision = 2,
